@@ -1,0 +1,66 @@
+[System]
+Name='kurallar'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='orjort'
+Range=[0 1]
+NumMFs=2
+MF1='l':'trimf',[0 0 1]
+MF2='h':'trimf',[0 1 1]
+
+[Input2]
+Name='orjstd'
+Range=[0 1]
+NumMFs=2
+MF1='l':'trimf',[0 0 1]
+MF2='h':'trimf',[-0.00264550264550278 0.997354497354497 0.997354497354497]
+
+[Input3]
+Name='rexort'
+Range=[0 1]
+NumMFs=2
+MF1='l':'trimf',[0 0 1]
+MF2='h':'trimf',[0 1 1]
+
+[Input4]
+Name='rexstd'
+Range=[0 1]
+NumMFs=2
+MF1='l':'trimf',[0 0 1]
+MF2='h':'trimf',[0 1 1]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='l':'trimf',[0 0 0.5]
+MF2='m':'trimf',[0 0.5 1]
+MF3='h':'trimf',[0.5 1 1]
+
+[Rules]
+1 1 1 1, 2 (1) : 1
+1 1 1 2, 1 (1) : 1
+1 1 2 1, 2 (1) : 1
+1 1 2 2, 1 (1) : 1
+1 2 1 1, 3 (1) : 1
+1 2 1 2, 2 (1) : 1
+1 2 2 1, 3 (1) : 1
+1 2 2 2, 3 (1) : 1
+2 1 1 1, 2 (1) : 1
+2 1 1 2, 1 (1) : 1
+2 1 2 1, 2 (1) : 1
+2 1 2 2, 1 (1) : 1
+2 2 1 1, 3 (1) : 1
+2 2 1 2, 1 (1) : 1
+2 2 2 1, 3 (1) : 1
+2 2 2 2, 2 (1) : 1

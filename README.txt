@@ -1,0 +1,1 @@
+In this project worked on grey scale finger vein images. For more information see my LinkedIn page.
